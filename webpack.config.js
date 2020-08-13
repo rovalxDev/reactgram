@@ -39,6 +39,8 @@ module.exports  = {
     devServer:{
         watchContentBase: true,
         contentBase:path.join(__dirname,'src'), // directorio de los archivos que seran mostrados por el servidor local
+        publicPath: '/',
+        historyApiFallback: true,
         port:9000
     }
 }
