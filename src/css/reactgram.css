@@ -1,6 +1,6 @@
 body {
-        background:#fff;
-        color:#4a4a4a;
+        background:#fafafa;
+        color:#262626;
 }
 
 .rg-grid {
@@ -14,14 +14,16 @@ body {
 }
 
 .rg-grid-item {    
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
     grid-column: 1;    
-    border:1px solid #dcdcdc;
+    /* border:1px solid #dcdcdc; */
 }
 
 .rg-areaheader {
-    background-color: #fafafa;
-    padding:15px 0px 10px 0;
+    background-color: #fff;
+    padding: 15px 0px 10px 0;
+    box-shadow: 0px 2px 12px 0px #f1f1f1;
+    border-bottom: 1px solid #dedede;
 }
 .rg-areaheader .rg-svglogo {
     width:8rem;
@@ -30,7 +32,7 @@ body {
     margin-top:40px;
 }
 .rg-areasearch .rg-input-search {
-    width:60%;
+    width:40%;
     margin:0 auto;
 }
 /**
@@ -41,26 +43,76 @@ body {
 }
 .rg-arearesults .rg-results  {
     width:40%;
-    height:250px;
-    overflow: auto;
+    height:300px;
+    overflow-y: scroll;
     margin: 0 auto;
     border:1px solid #999;
-    /* display:none; */
-    visibility: hidden;
+    display:none;
+    /* visibility: hidden; */
 }
 .rg-show-boxresults {
-    /* display:block; */
-    visibility: visible !important;
+    display:block !important;
+    /* visibility: visible !important; */
 }
-
+/**
+* Grid items of results
+**/
+ul {
+    list-style: none;
+    padding:0;
+}
+.grid-results {
+    display: grid;
+    grid-template-columns: 14% auto;
+    grid-column-gap: 8px;
+    grid-row-gap: 10px;
+    justify-items: stretch;
+    align-items: stretch;
+ }
+ .grid-results:hover {
+     background-color:#f5f5f5;
+     cursor:pointer;
+ }
+ .grid-results-item {
+     padding:4px;     
+ }
+  .grid-results-item.center {
+      text-align: right;
+  }
+.grid-results-item img {
+    text-align: center;
+    width:50px;
+    height:50px;
+    border-radius: 30px;
+}
 /**
 * Responsive design
 */
-@media (max-width:600px){
+@media (max-width:800px){
+    .grid-results {
+        grid-template-columns: 14% auto;
+    }
         .rg-areaheader .rg-svglogo {
             width:6rem;
         }
         .rg-areasearch .rg-input-search {
-            width:80%;            
+            width:60%;            
+        }
+        .rg-arearesults .rg-results  {
+            width: 60%;
+        }
+}
+@media (max-width:580px){
+    .grid-results {
+        grid-template-columns: 14% auto;
+    }
+        .rg-areaheader .rg-svglogo {
+            width:6rem;
+        }
+        .rg-areasearch .rg-input-search {
+            width:90%;            
+        }
+        .rg-arearesults .rg-results  {
+            width: 90%;
         }
 }

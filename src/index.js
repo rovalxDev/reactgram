@@ -10,8 +10,10 @@ import './css/reactgram.css'
 const PUBLIC_PATH = __dirname + "src/";
 process.env.PUBLIC_PATH = PUBLIC_PATH;
 
-import { BrowserRouter as Router, HashRouter as RouterHash} from 'react-router-dom';
+// import { BrowserRouter as Router, HashRouter as RouterHash} from 'react-router-dom';
+import { Router } from 'react-router';
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory();
 
-
-ReactDOM.render(<RouterHash><Rutas /></RouterHash>, document.getElementById("App"));
-// ReactDOM.render(<Router><Rutas /></Router>, document.getElementById("App"));
+// ReactDOM.render(<RouterHash history={history}><Rutas /></RouterHash>, document.getElementById("App"));
+ReactDOM.render(<Router history={history}><Rutas /></Router>, document.getElementById("App"));
