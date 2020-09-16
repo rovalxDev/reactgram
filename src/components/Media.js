@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useRouteMatch } from 'react-router';
 import  LayoutBasic from '../Layout/Basic'; // Layout basico 
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import Axios from 'axios';
 
 const Media = () => {
     let match = useRouteMatch(); // get params of the route
+    let [stateData, setStateData] = useState({})
     let {params,path, url} = match;
     let isUser = path.indexOf("hashtag") > -1? false : true;
     let URL_BASE = "https://www.instagram.com/";    
@@ -14,7 +15,8 @@ const Media = () => {
     useEffect(() => {
         console.log("Peticion...")
         let requestData = getObjectInstagram().then((response) => {
-            console.log(response.graphql.user);
+            console.log(response.graphql);
+            // setStateData(response.graphql.user)
         });        
 
         
