@@ -85,6 +85,37 @@ ul {
     height:50px;
     border-radius: 30px;
 }
+
+/** 
+* Estilos para el perfil de datos
+**/
+.profile-container {
+    border:1px solid;
+}
+.profile-container .profile-img {
+    border:1px solid;
+    width:11rem;
+    height:auto;
+}
+
+/**
+* Grid para fotos / videos
+**/
+.grid-photos {
+    display:grid;
+    /* grid-template-columns: repeat(3,minmax(auto, 50%)); */
+    /* grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); */
+    grid-template-columns:repeat(3, minmax(30%, 1fr));
+    /* column-gap: 8px;
+    row-gap: 8px; */
+    grid-gap:10px;
+    
+}
+.grid-photos .grid-item {
+    border:1px solid;
+}
+
+
 /**
 * Responsive design
 */

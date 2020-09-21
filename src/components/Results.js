@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 
-let Results = (props) => {            
+let Results = (props) => {      
         return (     
             <div className={"rg-results" + (props.sSearch.length >= 3  ?  " rg-show-boxresults" : "")} >
                     <ul>

@@ -7,7 +7,7 @@ const LayoutBasic = ({ children }) => {
             <div className="rg-grid-item rg-areaheader">
                 <img src={process.env.PUBLIC_PATH +"/img/instagram_text.svg"} className="rg-svglogo img-fluid mx-auto d-block" />
             </div>
-            { children }
+            { children }                    
         </div>
     )
 }
