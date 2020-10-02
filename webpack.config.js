@@ -56,7 +56,7 @@ module.exports  = {
     ],
     devServer:{
         watchContentBase: true,
-        // contentBase:__dirname, // directorio de los archivos que seran mostrados por el servidor local
+        // contentBase:__dirname, // directorio de los archivos que seran mostrados por el servidor 
         // publicPath: '/',
         historyApiFallback: true,
         open: true, // open web browser

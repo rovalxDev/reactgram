@@ -11,9 +11,6 @@ const Main = () => {
     let aResults = [];
 
     let setSearchString = (s) => {
-      //  if (s === "") { // si llega vacio el prop sSearch el componente no se ejecuta
-            // return null;
-        // }
         setStateSearch(s)
     }   
 
