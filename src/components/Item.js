@@ -4,10 +4,10 @@ import React from 'react';
  * @param {*} props 
  */
 const Item = (props) => {
-    let { thumbnail_img,type} = props;
+    let { thumbnail_img,id} = props;
         
     return (
-        <li className="grid-item">
+        <li className="grid-item" key={id}>
                 <div>
                         <img src={thumbnail_img} width="100%"/>
                 </div>

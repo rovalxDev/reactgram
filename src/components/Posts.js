@@ -2,30 +2,34 @@ import React, { useEffect, useState } from 'react';
 import Item from './Item';
 
 const Posts = (props) => {
-    const { publicaciones, title, nextPage} = props;
+    // console.log(props.publicaciones);
+    let [statePublicaciones, setStatePublicaciones] = useState([]);
+    const { publicaciones, count, page_info, title, nextPage} = props;
     if (publicaciones === undefined) return null;    
     
     let thereMore;
-    let [edges, setEdges] = useState([]);
-    const { end_cursor, has_next_page } = publicaciones.page_info || publicaciones;
-    // const edges = publicaciones.edges;      
+    // let aEdges = [];
+    // let [edges, setEdges] = useState([]);
+    // const { end_cursor, has_next_page } = publicaciones.page_info || publicaciones;
+       
     const checkMorePosts = () => {        
-        nextPage(end_cursor)
+        nextPage(page_info.end_cursor)
     }
     useEffect(() => {
-
-        thereMore = { display: (has_next_page ? "block" : "none") };
-        console.log(end_cursor)
-        console.log(publicaciones.edges[0])    
-
-        setEdges(publicaciones.edges)
-    },[])    
+        setStatePublicaciones(publicaciones)        
+        thereMore = { display: (page_info.has_next_page ? "block" : "none") };
+        //aEdges = [...edges, publicaciones.edges];
+        // setEdges(aEdges[0]);
+    }, [publicaciones])    
+    // console.log(edges);
     return (
         <article>
             <h4>{title}</h4>
             <ul className="grid-photos container">
-                { (edges.map((p, idx) => {
-                    return (<Item key={p.node.id} type={p.node.__typename} thumbnail_img={p.node.thumbnail_src}/>)
+                {(statePublicaciones.map((p, idx) => {        
+                    if(p.node.id !== undefined){            
+                        return (<Item key={p.node.id} id={p.node.id}  type={p.node.__typename} thumbnail_img={p.node.thumbnail_src}/>)
+                    } else return null;
                 }))}
             </ul>
             <div style={thereMore}>

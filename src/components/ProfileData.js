@@ -2,8 +2,6 @@ import React from 'react';
 
 let ProfileData = (props) => {
     let {profile, isuser} = props;
-    // console.log(props);
-    
     if(Object.keys(profile).length === 0) return null;
     
     let { edge_owner_to_timeline_media, edge_follow, edge_followed_by, full_name, biography, edge_hashtag_to_media, name, profile_pic_url, is_verified} = profile;
